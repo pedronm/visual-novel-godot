@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpnvsp6810pb8"]
+
+[ext_resource type="Script" uid="uid://b7mhxfuq5q378" path="res://characters/main_char.gd" id="1_2hybp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g1l7i"]
+radius = 0.6411133
+height = 1.6674805
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kh7b2"]
+albedo_color = Color(0.29411766, 1, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2hybp"]
+material = SubResource("StandardMaterial3D_kh7b2")
+
+[node name="MainChar" type="CharacterBody3D"]
+collision_mask = 14
+script = ExtResource("1_2hybp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.96179175, 0, 0, 0, 0.66318834, 0, 0.0415486, 0)
+shape = SubResource("CapsuleShape3D_g1l7i")
+
+[node name="MainChar" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MainChar"]
+transform = Transform3D(0.8, 0, 0, 0, 0.7, 0, 0, 0, 0.66318834, 0, 0, 0)
+mesh = SubResource("CylinderMesh_2hybp")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]

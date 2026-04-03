@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://com15i7751q8h"]
+[gd_scene load_steps=7 format=3 uid="uid://com15i7751q8h"]
 
 [ext_resource type="Script" uid="uid://e1crthyt1qlk" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cpnvsp6810pb8" path="res://characters/main_char.tscn" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,26 +30,10 @@ shadow_enabled = true
 
 [node name="PlanoBase" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.008335315, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+collision_layer = 2
+collision_mask = 13
 mesh = SubResource("BoxMesh_h2yge")
-
-[node name="Diálogo" type="Node3D" parent="."]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Diálogo"]
-layout_direction = 1
-anchors_preset = -1
-anchor_top = 0.605
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 65.95999
-offset_bottom = 322.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(1, 0.365)
-
-[node name="SubViewport" type="SubViewport" parent="Diálogo/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(1152, 512)
-render_target_update_mode = 4
 
 [node name="Objetos" type="Node3D" parent="."]
 
@@ -57,4 +42,7 @@ render_target_update_mode = 4
 [node name="Personagens" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37789324, 1.1107132)
+transform = Transform3D(1, 0, 0, 0, 0.92087954, 0.38984737, 0, -0.38984737, 0.92087954, 0, 0.5691583, 0.7992357)
+
+[node name="MainChar" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(0.099999994, 0, 0, 0, 0.099999994, 0, 0, 0, 0.099999994, -0.028922975, 0.09211287, -0.09858668)
