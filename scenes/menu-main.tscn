@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cl4t4m70j6232"]
+
+[ext_resource type="Script" uid="uid://dqgxo28rqss17" path="res://scenes/menu_main.gd" id="1_xiru1"]
+[ext_resource type="PackedScene" uid="uid://265e0g4ckwbf" path="res://scenes/proto-scene.tscn" id="2_g3wi7"]
+
+[node name="Node2D" type="Node2D" unique_id=1607714986]
+
+[node name="MenuMain" type="Control" parent="." unique_id=2042608867]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xiru1")
+cena_principal = ExtResource("2_g3wi7")
+
+[node name="lbl_menu" type="Label" parent="MenuMain" unique_id=1448460317]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Menu principal
+"
+
+[node name="btn_iniciar" type="Button" parent="MenuMain" unique_id=676597936]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 289.0
+offset_right = 617.0
+offset_bottom = 320.0
+text = "Iniciar "
+
+[connection signal="pressed" from="MenuMain/btn_iniciar" to="MenuMain" method="_on_btn_iniciar_pressed"]

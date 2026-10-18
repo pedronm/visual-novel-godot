@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b75mo02cuwid6"]
+
+[ext_resource type="Script" uid="uid://d4hlpygjqbmkx" path="res://characters/personagem_principal.gd" id="1_4wb2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjf15"]
+size = Vector2(40, 40)
+
+[node name="PersonagemPrincipal" type="CharacterBody2D" unique_id=1372090689]
+script = ExtResource("1_4wb2g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=278119929]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.76862746, 0.03529412, 0.03529412, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830087189]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_mjf15")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1720162519]
